@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Gaseosas Panda</title>
+    <script>
+        function enviarPedido() {
+            // Obtener los datos del formulario
+            var direccion = document.getElementById('nombre').value;
+            var gaseosa = document.getElementById('gaseosa').value;
+            var cantidad = document.getElementById('cantidad').value;
+            
+            // Crear el mensaje de WhatsApp con los datos del pedido
+            var mensaje = "¡Hola! Quiero hacer un pedido de gaseosas.%0A%0A";
+            mensaje += "Dirección: " + direccion + "%0A";
+            mensaje += "Gaseosa: " + gaseosa + "%0A";
+            mensaje += "Cantidad: " + cantidad + "%0A";
+            
+            // Crear el enlace de WhatsApp con el mensaje
+            var enlaceWhatsApp = "https://wa.me/+50235924939?text=" + mensaje;
+            
+            // Redireccionar a WhatsApp para enviar el mensaje
+            window.location.href = enlaceWhatsApp;
+        }
+    </script>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        color:black;
+        background-color: crimson;
+    }
+    button {
+        border-radius: 15px;
+        height: 200;
+        width: 300;
+    }
+</style>
+<body>
+    <center>
+    <h1>Gaseosas Panda</h1>
+   <img width="300" src="https://i.pinimg.com/originals/57/72/80/577280a09f7064839569e6df3c96fc5e.png">
+    <form>
+        <label for="nombre"><b>Dirección:</b></label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="gaseosa"><b>Gaseosa:</b></label><br>
+        <input type="text" id="gaseosa" name="gaseosa" required><br>
+        <label for="cantidad"><b>Cantidad:</b></label><br>
+        <input type="number" id="cantidad" name="cantidad" required><br>
+        <br>
+        <button type="button" onclick="enviarPedido()">Enviar Pedido</button>
+    </form>
+</center>
+</body>
+</html>
